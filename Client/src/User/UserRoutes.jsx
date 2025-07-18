@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const verifyUser = async () => {
       try {
-        await axios.get("http://localhost:5000/api/user/profile", {
+        await axios.get("/api/user/profile", {
           withCredentials: true, // ✅ important for cookies
         });
         setAuth({ loading: false, isAuthenticated: true });

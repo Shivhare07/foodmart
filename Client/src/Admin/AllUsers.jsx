@@ -14,7 +14,7 @@ const AllUsers = () => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/user/allusers", {
+      const res = await axios.get("/api/user/allusers", {
         withCredentials: true,
       });
       setUsers(res.data.data || []);
@@ -29,7 +29,7 @@ const AllUsers = () => {
     const confirm = window.confirm("Are you sure you want to delete this user?");
     if (!confirm) return;
     try {
-      await axios.delete(`http://localhost:5000/api/user/delete/${id}`, {
+      await axios.delete(`/api/user/delete/${id}`, {
         withCredentials: true,
       });
       toast.success("User deleted");
@@ -103,7 +103,7 @@ const AllUsers = () => {
                       <img
                         src={
                           user.profile?.path
-                            ? `http://localhost:5000/${user.profile.path}`
+                            ? `/${user.profile.path}`
                             : "https://via.placeholder.com/40x40.png?text=User"
                         }
                         alt="Profile"

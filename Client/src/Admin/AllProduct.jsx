@@ -13,7 +13,7 @@ const AllProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/product/", {
+      const res = await axios.get("/api/product/", {
         withCredentials: true,
       });
       setProducts(res.data?.data || []);
@@ -25,7 +25,7 @@ const AllProducts = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/product/delete/${id}`, {
+      await axios.delete(`/api/product/delete/${id}`, {
         withCredentials: true,
       });
       toast.success("Product deleted");

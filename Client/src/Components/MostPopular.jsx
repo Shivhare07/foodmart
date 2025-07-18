@@ -10,7 +10,7 @@ const MostPopular = () => {
   useEffect(() => {
     const fetchPopularProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/product/popular");
+        const res = await axios.get("/api/product/popular");
         setProducts(res.data.data || []);
       } catch (err) {
         console.error("Failed to load popular products:", err);

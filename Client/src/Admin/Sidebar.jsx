@@ -6,7 +6,7 @@ const AdminSidebar = () => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await axios.post("http://localhost:5000/api/admin/logout", {}, { withCredentials: true });
+    await axios.post("/api/admin/logout", {}, { withCredentials: true });
     toast.success("Logged out");
     navigate("/admin/login");
   };

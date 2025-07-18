@@ -16,7 +16,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/product/get/${id}`);
+        const res = await axios.get(`/api/product/get/${id}`);
         setProduct(res.data.data);
       } catch (err) {
         toast.error("Failed to load product details");

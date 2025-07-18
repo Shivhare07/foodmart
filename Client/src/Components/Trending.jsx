@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import ProductCard from "../Components/ProductCard";
 import { useCart } from "../Context/CartContext";
 
-const categories = ["All", "Fruits", "Vegetable", "Drinks", "Snacks", "Dairy & Eggs"];
+const categories = ["All", "Fruits", "Vegetable", "Drinks", "Snack", "Dairy & Eggs"];
 
 const TrendingProducts = () => {
   const [products, setProducts] = useState([]);
@@ -15,7 +15,7 @@ const TrendingProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/product/trending");
+        const res = await axios.get("/api/product/trending");
         setProducts(res.data.data || []);
       } catch (err) {
         console.error("Error fetching trending products:", err);

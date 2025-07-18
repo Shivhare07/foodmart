@@ -11,7 +11,7 @@ export default function Profilepage() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/user/profile", {
+        const res = await axios.get("/api/user/profile", {
           withCredentials: true, 
         });
         setUser(res.data.data);
@@ -28,7 +28,7 @@ export default function Profilepage() {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:5000/api/user/logout", {
+      await axios.get("/api/user/logout", {
         withCredentials: true,
       });
     } catch (err) {

@@ -10,10 +10,10 @@ const Dashboard = () => {
   const fetchData = async () => {
     try {
       const [productsRes, usersRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/product/", {
+        axios.get("/api/product/", {
           withCredentials: true,
         }),
-        axios.get("http://localhost:5000/api/user/allusers", {
+        axios.get("/api/user/allusers", {
           withCredentials: true,
         }),
       ]);

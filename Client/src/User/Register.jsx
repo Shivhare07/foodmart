@@ -65,7 +65,7 @@ export default function Register() {
       form.append("number", number);
       if (profileImage) form.append("profileImage", profileImage);
 
-      const response = await fetch("http://localhost:5000/api/user/register", {
+      const response = await fetch("/api/user/register", {
         method: "POST",
         body: form,
       });

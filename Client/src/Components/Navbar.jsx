@@ -26,7 +26,7 @@ const Navbar = () => {
 
   const fetchUserProfile = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/user/profile", {
+      const res = await axios.get("/api/user/profile", {
         withCredentials: true,
       });
       setUser(res.data.data);
@@ -40,7 +40,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:5000/api/user/logout", {
+      await axios.get("/api/user/logout", {
         withCredentials: true,
       });
     } catch (err) {

@@ -24,7 +24,7 @@ const EditProduct = () => {
 
   const fetchProduct = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/product/get/${id}`, {
+      const res = await axios.get(`/api/product/get/${id}`, {
         withCredentials: true,
       });
 
@@ -82,7 +82,7 @@ const EditProduct = () => {
         data.append("image", image);
       }
 
-      await axios.put(`http://localhost:5000/api/product/update/${id}`, data, {
+      await axios.put(`/api/product/update/${id}`, data, {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       });

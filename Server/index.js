@@ -18,6 +18,7 @@ app.use(cors({
     credentials: true,
   }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, "../Client/dist")));
 
 connectDb();
 
@@ -30,6 +31,10 @@ app.use((err, req, res, next) => {
     const errStatus = err.statusCode || 500;
     const errMessage = err.message || "Internal server error";
     res.status(errStatus).send({ success: false, message: errMessage });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../Client/dist", "index.html")); // or "client/build"
 });
 
 app.listen(port, (err) => {
