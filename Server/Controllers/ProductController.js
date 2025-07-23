@@ -21,7 +21,7 @@ const createProductController = async (req, res) => {
     if (req.file) {
       image = {
         filename: req.file.filename,
-        path: "http://localhost:5000/" + req.file.path,
+        path: "https://foodmart-4p8z.onrender.com" + req.file.path,
       };
     }
 
