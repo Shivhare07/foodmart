@@ -27,6 +27,7 @@ app.use("/api/product", Product);
 app.use("/api/admin", admin);
 
 
+
 app.use((err, req, res, next) => {
     const errStatus = err.statusCode || 500;
     const errMessage = err.message || "Internal server error";
