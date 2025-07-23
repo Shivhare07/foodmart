@@ -11,7 +11,7 @@ const registeruserController = async (req, res) => {
         if (req.file) {
             image = {
                 filename: req.file.filename,
-                path: "https://foodmart-4p8z.onrender.com"+ req.file.path,
+                path: "https://foodmart-4p8z.onrender.com/"+ req.file.path,
             };
         }
         if (!name || !email || !password || !number) {
